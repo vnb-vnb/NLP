@@ -65,3 +65,31 @@ Khi thử nghiệm với CountVectorizer, ta thấy sự khác biệt giữa vi�
 MMột trong những khó khăn lớn nhất là xử lý các trường hợp đặc biệt như dấu gạch nối hay chữ viết hoa. Nếu chọn cách đơn giản thì một số cụm từ cố định có thể bị tách rời mất ý nghĩa. Ngược lại, nếu xử lý chi tiết như RegexTokenizer thì sẽ tạo ra nhiều token rời rạc làm tăng độ phức tạp của vocabulary
 
 ## bài làm có sự trợ giúp của trí thông minh nhân tạo
+
+task 1 trong lab 1
+kết quảquả
+Input: Hello, world!
+Output: ['hello', ',', 'world', '!']
+
+Input: This is a test.
+Output: ['this', 'is', 'a', 'test', '.']
+
+Input: What's up? Let's go!
+Output: ["what's", 'up', '?', "let's", 'go', '!']
+
+Input: No punctuation
+Output: ['no', 'punctuation']
+
+Input:
+Output: []
+
+All tests passed!
+
+phân tích kq:
+
+Chuyển từ thành chữ thường (e.g., "Hello" → "hello").
+Tách dấu câu (",", ".", "!", "?") thành token riêng.
+Giữ nguyên từ viết tắt (e.g., "What's", "Let's").
+Tách từ dựa trên khoảng trắng.
+Trả về danh sách rỗng cho chuỗi rỗng.
+tokenizer xử lý đúng các trường hợp kiểm tra, phù hợp cho các tác vụ xử lý ngôn ngữ tự nhiên cơ bản.
