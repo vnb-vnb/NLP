@@ -10,7 +10,7 @@ def test_simple_tokenizer():
         ("This is a test.", ["this", "is", "a", "test", "."]),
         ("What's up? Let's go!", ["what's", "up", "?", "let's", "go", "!"]),
         ("No punctuation", ["no", "punctuation"]),
-        ("", [])  # Empty input
+        ("", [])  
     ]
     
     for input_text, expected in test_cases:

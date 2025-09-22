@@ -20,9 +20,11 @@ class SimpleTokenizer(Tokenizer):
         
         # Replace punctuation with a space before and after to split it as separate tokens
         # This handles . , ? ! as specified
-        text = re.sub(r'([.,?!])', r' \1 ', text)
+        text = re.sub(r'([.,?!])', r' \1 ', text) # rách dấu câu lẻ ra không cho nó dinh với từ 
         
         # Split on whitespace and filter out empty tokens
-        tokens = [token for token in text.split() if token]
+        tokens = [token for token in text.split() if token]#Tách text thành các token bằng khoảng trắng.
         
         return tokens
+    
+    # tổng kết lại đoạn code trên chèn khoảng trắng quanh các dấu câu còn đoạn code dưới làm công việc tách các từ ra thành token 

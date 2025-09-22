@@ -6,11 +6,12 @@ from src.core.interfaces import Tokenizer
 class RegexTokenizer(Tokenizer):
     def tokenize(self, text: str) -> List[str]:
         """
-        Tokenize text using regex.
-        Splits words and keeps punctuation as separate tokens.
+\w+ : match các từ hoặc số (ví dụ "hello", "123").
 
-        Example regex: \w+|[^\w\s]
-        """
-        # \w+ matches words/numbers, [^\w\s] matches punctuation
-        tokens = re.findall(r"\w+|[^\w\s]", text)
+[^\w\s] : match ký tự không phải từ (\w) và không phải khoảng trắng (\s) → tức là dấu câu (.,!?;...)
+
+Dấu | : nghĩa là "hoặc".
+
+Kết hợp lại → tách text thành từ/cụm số và dấu câu riêng biệt. """
+        tokens = re.findall(r"\w+|[^\w\s]", text)# re.findall() sẽ tìm các kí tự đáp ứng yêu cầu của chúng ta bên trong dấu ngoặc 
         return tokens
